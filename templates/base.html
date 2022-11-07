@@ -21,10 +21,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               {% if user.is_authenticated %}
                 <li><span>Hello {{ user.username }}! &nbsp;</span>
-                <li><a href="{% url 'logout' %}">Log Out</a>
+                <li><a href="{% url 'mylogin' %}">Log Out</a>
               {% else %}
-                <li><a href="{% url 'login' %}">Register</a>&nbsp;
-                <li><a href="{% url 'login' %}">Log In</a>
+                <li><a href="{% url 'mylogin' %}">Register</a>&nbsp;
+                <li><a href="{% url 'mylogin' %}">Log In</a>
               {% endif %}
             </ul>
             <!-- end login register-->

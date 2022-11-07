@@ -21,11 +21,13 @@ from django.contrib.auth.decorators import login_required
 from django.conf.urls.static import static
 from . import settings
 from books.views import books
+from books.mylogin import mylogin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include('books.urls')),
-    path('accounts/', include("django.contrib.auth.urls")),  # new
+    path('mylogin/', mylogin, name="mylogin"), 
+    # path('accounts/', include("django.contrib.auth.urls")),  # new
     path('', books)
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
