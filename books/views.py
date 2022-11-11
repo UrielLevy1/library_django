@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, redirect
 from books.forms import BookForm
-
 from books.models import Book
 
 
@@ -38,3 +37,8 @@ def find_book(request):
 
 def delete_book(request):
     return HttpResponse("BOOK DELETED")
+
+def single_book(request, pk):
+    book = Book.objects.get(id=pk)
+    return render(request, "single_book.html",{'book':book})
+    

@@ -2,7 +2,7 @@
 {% block content %}
 
 <form action="{% url 'books:add_book_action' %}" method="POST" enctype="multipart/form-data">
-    <!-- {% csrf_token %} -->
+     {% csrf_token %}
     <table>
     {{ bookform.as_table }}
     </table>
